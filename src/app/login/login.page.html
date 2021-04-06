@@ -1,0 +1,15 @@
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-img src="/assets/images/logo.jpg"></ion-img>
+        <p><b>Prueba técnica</b></p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <app-form-login (onSubmit)='submitForm($event)'></app-form-login>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,47 @@
+@import '../../mixins';
+
+ion-content {
+  --background: url('/assets/images/background.jpg') no-repeat center center / cover;
+
+  ion-grid {
+    margin: 0 2vw 0 2vw;
+
+    @include desktop {
+      margin: auto;
+      max-width: 400px;
+      background: white;
+      margin-top: 8vw;
+    }
+
+    ion-row:nth-child(1) ion-col {
+      margin: 20px 0 20px 0;
+      text-align: center;
+  
+      p {
+        display: none;
+        
+        @include desktop {
+          display: block;
+        }
+      }
+  
+      ion-img {
+        object-fit: cover;
+        width: 120px;
+        height: 120px;
+        display:block;
+        margin:auto;
+      }
+    }
+  
+    ion-row:nth-child(2) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+  }
+
+  
+  
+}
