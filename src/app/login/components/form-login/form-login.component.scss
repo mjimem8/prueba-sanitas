@@ -5,6 +5,9 @@
 }
 
 ion-item {
+    --highlight-color-invalid: gray;
+    --highlight-color-valid: gray;
+
     &:nth-child(1), &:nth-child(2) {
         color: gray;
 

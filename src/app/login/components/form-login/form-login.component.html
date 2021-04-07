@@ -1,12 +1,12 @@
 <form [formGroup]="form" (ngSubmit)="validateForm()">
   <ion-item>
     <ion-label><ion-icon name="person-outline"></ion-icon></ion-label>
-    <ion-input type="email" formControlName="email" placeholder="Email"></ion-input>
+    <ion-input type="email" formControlName="email" placeholder="Email" (keyup.enter)="validateForm()" (input)="isSubmited = false"></ion-input>
     <p *ngIf="showErrorForm('email')">{{ getError('email') }}</p>
   </ion-item>
   <ion-item>
     <ion-label><ion-icon name="lock-closed-outline"></ion-icon></ion-label>
-    <ion-input type="password" formControlName="password" placeholder="Contraseña"></ion-input>
+    <ion-input type="password" formControlName="password" placeholder="Contraseña" (keyup.enter)="validateForm()" (input)="isSubmited = false"></ion-input>
     <p *ngIf="showErrorForm('password')">{{ getError('password') }}</p>
   </ion-item>
   <ion-item>

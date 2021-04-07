@@ -18,7 +18,7 @@ describe('LoginPage', () => {
     fixture.detectChanges();
   }));
 
-  it('should create', () => {
+  it('componente creado', () => {
     expect(component).toBeTruthy();
   });
 });

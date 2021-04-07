@@ -12,6 +12,8 @@ export class FormLoginComponent implements OnInit {
   @Output() onSubmit = new EventEmitter<FormGroup>();
 
   public form: FormGroup;
+  public isSubmited: boolean;
+
   private readonly ERRORS_FORMS = {
     minlength: 'Campo con menos carácteres de los necesarios',
     pattern: 'Campo con carácteres inválidos',
@@ -24,7 +26,7 @@ export class FormLoginComponent implements OnInit {
     this.initForm();
   }
 
-  initForm() {
+  private initForm() {
     this.form = this.formBuilder.group({
       email: ['', [Validators.required, Validators.pattern(patterns.email)]],
       password: ['', [Validators.required, Validators.minLength(5)]],
@@ -33,7 +35,7 @@ export class FormLoginComponent implements OnInit {
   }
 
   showErrorForm(fieldName: string): boolean {
-    if (this.form.controls[fieldName]) {
+    if (this.isSubmited && this.form.controls[fieldName]) {
       const { invalid, touched, dirty } = this.form.controls[fieldName];
       return invalid && touched && dirty;
     }
@@ -48,6 +50,7 @@ export class FormLoginComponent implements OnInit {
   }
 
   validateForm() {
+    this.isSubmited = true;
     if (this.form.valid) {
       this.onSubmit.emit(this.form);
     } 
